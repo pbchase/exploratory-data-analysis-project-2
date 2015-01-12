@@ -1,6 +1,5 @@
 # plot1.R
-# A script to generate the plot "Global Active Power" based on data from
-# the UC Irvine Machine Learning Repository about household electricity consumption.
+# A script to process PM2.5 Emissions Data
 
 # Download data file
 dataFile <- "exdata_data_NEI_data.zip"
@@ -17,3 +16,9 @@ unzip(dataFile)
 # load the pair of data frames
 nei <- readRDS("summarySCC_PM25.rds")
 scc <- readRDS("Source_Classification_Code.rds")
+
+
+# Question:
+# Have total emissions from PM2.5 decreased in the United States from 1999 to
+# 2008? Using the base plotting system, make a plot showing the total PM2.5
+# emission from all sources for each of the years 1999, 2002, 2005, and 2008.
