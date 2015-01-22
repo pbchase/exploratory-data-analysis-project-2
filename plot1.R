@@ -22,3 +22,10 @@ scc <- readRDS("Source_Classification_Code.rds")
 # Have total emissions from PM2.5 decreased in the United States from 1999 to
 # 2008? Using the base plotting system, make a plot showing the total PM2.5
 # emission from all sources for each of the years 1999, 2002, 2005, and 2008.
+
+emissions_by_year <- tapply(nei$Emissions, nei$year, FUN=sum)
+
+png(file="plot1.png", bg="transparent")
+barplot(emissions_by_year, ylab="Total Emissions", xlab="Year",
+        main="Total PM2.5 Emissions from All Sources by Year")
+dev.off()
