@@ -52,7 +52,6 @@ groups <- group_by(vehicles, year, county)
 # Summarize the data element we want to plot: emissions
 grouped_emissions <- summarize(groups, total_emissions = sum(Emissions))
 
-
 # Save the plot to a PNG
 # The plot must show facets for each county.
 # Each facet must show a graph of annual motor vehicle

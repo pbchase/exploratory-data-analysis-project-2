@@ -28,10 +28,14 @@ scc <- readRDS("Source_Classification_Code.rds")
 library(ggplot2)
 library(dplyr)
 
+# subset the data to just Baltimore data
 baltimore <- subset(nei, fips == "24510")
+# create Groups of fdata by year and type
 groups <- group_by(baltimore, year, type)
+# Sum all sources in each group
 grouped_emissions <- summarize(groups, total_emissions = sum(Emissions))
 
+# plot the Baltimore emissions data by year and type
 png(file="plot3.png", bg="transparent", width = 960, height = 480, units = "px",)
 qplot(year, total_emissions, data=grouped_emissions, ylab="Total PM2.5 Emissions",
     xlab="Year", main= "Annual PM2.5 Emissions in Baltimore by Source", facets = . ~ type)

@@ -23,8 +23,10 @@ scc <- readRDS("Source_Classification_Code.rds")
 # 2008? Using the base plotting system, make a plot showing the total PM2.5
 # emission from all sources for each of the years 1999, 2002, 2005, and 2008.
 
+# summarize all emisions data by year
 emissions_by_year <- tapply(nei$Emissions, nei$year, FUN=sum)
 
+# write a plot of total emmissions data by year to a file
 png(file="plot1.png", bg="transparent")
 barplot(emissions_by_year, ylab="Total Emissions", xlab="Year",
         main="Total PM2.5 Emissions from All Sources by Year")
